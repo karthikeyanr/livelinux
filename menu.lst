@@ -1,0 +1,14 @@
+timeout 10
+default 0
+
+title avg_arl_cdi_all_120_160420a12074
+ find --set-root /iso/avg_arl_cdi_all_120_160420a12074.iso
+ map /iso/avg_arl_cdi_all_120_160420a12074.iso (0xff)
+ map --hook
+ chainloader (0xff)
+
+title Shutdown
+ halt
+
+title Reboot
+ reboot 
