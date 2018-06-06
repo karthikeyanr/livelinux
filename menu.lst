@@ -7,6 +7,63 @@ title avg_arl_cdi_all_120_160420a12074
  map --hook
  chainloader (0xff)
 
+title Hirens.BootCD.15.2 
+ find --set-root /iso/Hirens.BootCD.15.2.iso
+ map /iso/Hirens.BootCD.15.2.iso (hd32)
+ map --hook
+ chainloader (hd32)
+
+title TENS 1.7.4.1 public 
+find --set-root --ignore-floppies /iso/TENS-1.7.4.1_public.iso
+map /iso/TENS-1.7.4.1_public.iso (hd32)
+map --hook
+root (hd32)
+kernel (hd32)/boot/vmlinuz load_ramdisk=1 ramdisk_blocksize=4096 root=/dev/ram0 ramdisk_size=786432 console=tty1 
+chainloader (hd32) 
+
+title TENS 1.7.4.1 public deluxe 
+find --set-root --ignore-floppies /iso/TENS-1.7.4.1_public_deluxe.iso
+map /iso/TENS-1.7.4.1_public_deluxe.iso (hd32)
+map --hook
+root (hd32)
+kernel (hd32)/boot/vmlinuz load_ramdisk=1 ramdisk_blocksize=4096 root=/dev/ram0 ramdisk_size=786432 console=tty1
+chainloader (hd32) 
+
+title Ultimate Boot CD 5.3.8
+ find --set-root /iso/ubcd538.iso
+ map /iso/ubcd538.iso (hd32)
+ map --hook
+ chainloader (hd32)
+
+title GNU/CDlinux 0.9.7.1 
+ map --mem /iso/CDlinux-0.9.7.1.iso (hd32)
+ map --hook
+ map --status
+ kernel (hd32)/CDlinux/bzImage CDL_DEV=label=GRUB2EFI CDL_DIR=/iso/ CDL_IMG=CDlinux-0.9.7.1.iso 
+ initrd (hd32)/CDlinux/initrd
+ map --unhook
+ boot
+
+title pclinuxos64 kde5 2017.11 
+ map --unhook
+ map --unmap=0:0xff
+ find --set-root --ignore-floppies /iso/pclinuxos64-kde5-2017.11.iso
+ map --heads=0 --sectors-per-track=0 /iso/pclinuxos64-kde5-2017.11.iso (0xff)
+ map --hook
+ root (0xff)
+ kernel (0xff)/isolinux/vmlinuz fromusb bootfromiso=/iso/pclinuxos64-kde5-2017.11.iso livecd=livecd root=/dev/rd/3 acpi=on vga=788 keyb=en vmalloc=256M edd=off
+ initrd (0xff)/isolinux/initrd.gz
+
+title pclinuxos64 MATE 2017.11 
+ map --unhook
+ map --unmap=0:0xff
+ find --set-root --ignore-floppies /iso/pclinuxos64-MATE-2017.11.iso
+ map --heads=0 --sectors-per-track=0 /iso/pclinuxos64-MATE-2017.11.iso (0xff)
+ map --hook
+ root (0xff)
+ kernel (0xff)/isolinux/vmlinuz fromusb bootfromiso=/iso/pclinuxos64-MATE-2017.11.iso livecd=livecd root=/dev/rd/3 acpi=on vga=788 keyb=en vmalloc=256M edd=off 
+ initrd (0xff)/isolinux/initrd.gz
+
 title Shutdown
  halt
 
