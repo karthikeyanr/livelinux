@@ -44,24 +44,24 @@ title GNU/CDlinux 0.9.7.1
  map --unhook
  boot
 
-title pclinuxos64 kde5 2017.11 
+title pclinuxos64 kde5 2018.06 
  map --unhook
  map --unmap=0:0xff
- find --set-root --ignore-floppies /iso/pclinuxos64-kde5-2017.11.iso
- map --heads=0 --sectors-per-track=0 /iso/pclinuxos64-kde5-2017.11.iso (0xff)
+ find --set-root --ignore-floppies /iso/pclinuxos64-kde5-2018.06.iso
+ map --heads=0 --sectors-per-track=0 /iso/pclinuxos64-kde5-2018.06.iso (0xff)
  map --hook
  root (0xff)
- kernel (0xff)/isolinux/vmlinuz fromusb bootfromiso=/iso/pclinuxos64-kde5-2017.11.iso livecd=livecd root=/dev/rd/3 acpi=on vga=788 keyb=en vmalloc=256M edd=off
+ kernel (0xff)/isolinux/vmlinuz fromusb bootfromiso=/iso/pclinuxos64-kde5-2018.06.iso livecd=livecd root=/dev/rd/3 acpi=on vga=788 keyb=en vmalloc=256M edd=off
  initrd (0xff)/isolinux/initrd.gz
 
-title pclinuxos64 MATE 2017.11 
+title pclinuxos64 MATE 2018.06 
  map --unhook
  map --unmap=0:0xff
- find --set-root --ignore-floppies /iso/pclinuxos64-MATE-2017.11.iso
- map --heads=0 --sectors-per-track=0 /iso/pclinuxos64-MATE-2017.11.iso (0xff)
+ find --set-root --ignore-floppies /iso/pclinuxos64-MATE-2018.06.iso
+ map --heads=0 --sectors-per-track=0 /iso/pclinuxos64-MATE-2018.06.iso (0xff)
  map --hook
  root (0xff)
- kernel (0xff)/isolinux/vmlinuz fromusb bootfromiso=/iso/pclinuxos64-MATE-2017.11.iso livecd=livecd root=/dev/rd/3 acpi=on vga=788 keyb=en vmalloc=256M edd=off 
+ kernel (0xff)/isolinux/vmlinuz fromusb bootfromiso=/iso/pclinuxos64-MATE-2018.06.iso livecd=livecd root=/dev/rd/3 acpi=on vga=788 keyb=en vmalloc=256M edd=off 
  initrd (0xff)/isolinux/initrd.gz
 
 title Shutdown
